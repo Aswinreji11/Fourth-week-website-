@@ -1,0 +1,54 @@
+<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark">
+<link rel="stylesheet" href="/stylecss/css and script tags.css">
+		<%- include('./partials/header.ejs') %>
+<body>
+    <!-- <section class="container"> -->
+<div class="signup-form">
+    <form action="/login" method="post">
+		<h2>Log In</h2>
+		<p>Enjoy explore </p>
+		<hr>
+	
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">          
+				</div>
+				<input type="text" id="user" class="form-control" name="name" placeholder="Username" autocomplete="off" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<input type="password" id="pass" class="form-control" name="password" placeholder="Password" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+		<div class="form">
+            <button type="submit" class="btn btn-primary btn-lg">Log In</a></button>
+        	<br>
+			<br>
+			<% if(errorMessage) { %>
+				<p class="text-danger" id="errMsg"><%= errorMessage  %></p>
+				<% } %>
+		</div>
+
+    </form><br>
+    <div class="text-center">Need an account? <a href="/signup">Sign Up</a></div>
+</div>
+<!-- </section> -->
+
+<script>
+
+    reload()
+    const errContainer = document.getElementById('errMsg');
+    function reload() {
+        setTimeout(() => {
+        errContainer.innerHTML = "";
+        }, 2000);
+    }
+    
+    
+</script>
+ 
+</body>
+</html> 
